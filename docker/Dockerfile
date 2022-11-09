@@ -10,12 +10,18 @@ RUN apt update && \
 COPY ./requirements.txt /opt/requirements.txt
 RUN pip3 install -r /opt/requirements.txt
 
+RUN cd /tmp \
+    && wget https://developer.download.nvidia.com/compute/mathdx/redist/mathdx/linux-x86_64/nvidia-mathdx-22.02.0-Linux.tar.gz \
+    && tar xvf nvidia-mathdx-22.02.0-Linux.tar.gz \ 
+    && rm -rf nvidia-mathdx-22.02.0-Linux.tar.gz \
+    && mv nvidia-mathdx-22.02.0-Linux/opt/nvidia/mathdx /opt/nvidia/ \
+    && rm -rf nvidia-mathdx-22.02.0-Linux
 
-RUN cd /opt \
-    && git clone https://gitlab-master.nvidia.com/mmacklin/warp.git \
-    && cd warp \
-    && python3 build_lib.py \
-    && pip3 install -e .
+#RUN cd /opt \
+#    && git clone https://gitlab-master.nvidia.com/mmacklin/warp.git \
+#    && cd warp \
+#    && python3 build_lib.py \
+#    && pip3 install -e .
 
 
 # ENV KAOLIN_INSTALL_EXPERIMENTAL=1

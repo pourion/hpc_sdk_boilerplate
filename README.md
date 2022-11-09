@@ -4,7 +4,7 @@ This docker container will provide the NVIDIA HPC SDK 22.9 release; find the doc
 To get an idea of what you could do watch the GTC 2022 video at https://www.nvidia.com/en-us/on-demand/session/gtcfall22-a41087/
 
 
-Moreover, this will also come with the latest version of NVIDIA WARP; as well as Google JAX.
+Moreover, this will also come with the latest version of NVIDIA WARP; Google JAX; and MathDX (containing cuFFTDx).
 
 ## Getting Started
 
